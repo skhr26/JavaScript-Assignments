@@ -25,8 +25,24 @@
   - `npm run test-perfect`
 */
 
-function isPerfectNumber(num) {
-  // Your code here
+function isPerfectNumber(n) {
+  let vec=[];
+  for(let i=1;i<=Math.sqrt(n);i++) {
+    if(n%i==0) {
+      vec.push(i);
+      if((n/i)!=i) {
+        vec.push(n/i);
+      }
+    }
+  }
+  vec.sort((a,b)=>a-b);
+  vec.pop();
+  let sum=0;
+  for(let value of vec) {
+    sum+=value;
+  }
+  return (sum===n)?true:false;
+
 }
 
 module.exports = { isPerfectNumber };

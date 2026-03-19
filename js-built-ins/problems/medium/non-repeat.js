@@ -22,5 +22,14 @@
 */
 function nonrepeat(str) {
   // Your code here
+   let map=new Map();
+   for(let value of str) {
+    map.set(value,(map.get(value)||0)+1);
+   }
+   for(let ch of str) {
+    if(map.get(ch)===1) return ch;
+   }
+   return null;
+  
 }
 module.exports = nonrepeat;
