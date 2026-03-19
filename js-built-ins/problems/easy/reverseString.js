@@ -20,6 +20,8 @@
 
 function reverseString(str) {
   // Your code here
+  let bakra=str.split('').reverse().join('');
+  return bakra;
 }
 
 module.exports = reverseString;
